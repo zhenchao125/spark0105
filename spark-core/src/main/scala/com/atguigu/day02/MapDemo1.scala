@@ -15,7 +15,7 @@ object MapDemo1 {
         
         /*val result: RDD[Int] = rdd1.flatMap(x => Array(x, x * x, x * x * x))*/
         /*val result: RDD[Array[Int]] = rdd1.glom()
-        result.collect.foreach(a => println(a.mkString(", "))) */
+        result.collect.foreach(a => println(a.mkString(", ")))  */
         
         // 慎用
         val result: RDD[(Boolean, Iterable[Int])] = rdd1.groupBy( x => x % 2 == 1)
