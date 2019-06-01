@@ -12,7 +12,10 @@ object JoinDemo1 {
 //        val rdd3: RDD[(Int, (String, String))] = rdd1.join(rdd2)
 //        var rdd3 = rdd1.leftOuterJoin(rdd2)  // 4,("f", )
 //        var rdd3 = rdd1.rightOuterJoin(rdd2)
-        val rdd3 = rdd1.fullOuterJoin(rdd2)
+//        val rdd3 = rdd1.fullOuterJoin(rdd2)
+        
+        val rdd3: RDD[(Int, (Iterable[String], Iterable[String]))] = rdd1.cogroup(rdd2)
+        
         rdd3.collect.foreach(println)
         sc.stop()
         
