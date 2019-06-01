@@ -19,8 +19,8 @@ object JoinDemo1 {
     }
 }
 /*
-leftJoin
-rightJoin
-fullJoin
+leftOuterJoin
+rightOuterJoin
+fullOuterJoin
 
  */
