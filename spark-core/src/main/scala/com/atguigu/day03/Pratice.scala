@@ -27,9 +27,11 @@ object Pratice {
         val resultRDD: RDD[(String, List[(String, Int)])] = groupedRDD.map {
             
             case (pro, it) => println("bbb"); (pro, it.toList.sortBy(_._2)(Ordering.Int.reverse).take(3))
-        }.sortByKey()
-        resultRDD.collect.foreach(println)
+        }
+        
+        resultRDD.sortByKey().collect.foreach(println)
         sc.stop()
+        
     }
 }
 /*
