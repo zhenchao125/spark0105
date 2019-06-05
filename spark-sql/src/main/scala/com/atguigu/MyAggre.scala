@@ -24,6 +24,7 @@ object MyAggre {
         spark.udf.register("my_avg", new MyAvg)
         
         val rdd = spark.sparkContext.parallelize(Seq(("lisi1", 21), ("lisi2", 30), ("lisi3", 25), ("lisi4", 15), ("lisi5", 18), ("lisi5", 18)))
+        
         val df: DataFrame = rdd.toDF("name", "age")
         df.createOrReplaceTempView("user")
         spark.sql("select my_avg(age) from user").show
