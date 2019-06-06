@@ -4,6 +4,7 @@ import org.apache.spark.sql.SparkSession
 
 object HiveDemo1 {
     def main(args: Array[String]): Unit = {
+        System.setProperty("HADOOP_USER_NAME", "atguigu")
         val spark: SparkSession = SparkSession
             .builder()
             .master("local[*]")
