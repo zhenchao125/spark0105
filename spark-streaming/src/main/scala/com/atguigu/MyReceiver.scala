@@ -35,12 +35,10 @@ class MyReceiver(val host: String, val port: Int) extends Receiver[String](Stora
         } catch {
             case e =>
             
-            
-        } finally{
+        } finally {
             
             restart("again")
         }
-        
     }
     
     /**
